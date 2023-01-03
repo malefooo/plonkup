@@ -98,7 +98,7 @@ pub struct TurboComposer {
     pub(crate) d_w: Vec<Witness>,
 
     /// Public lookup table
-    pub(crate) lookup_table: LookupTable,
+    pub lookup_table: LookupTable,
 
     /// These are the actual witness values.
     pub(crate) witnesses: HashMap<Witness, BlsScalar>,
@@ -136,7 +136,7 @@ impl TurboComposer {
 
     /// Constructs a dense vector of the Public Inputs from the positions and
     /// the sparse vector that contains the values.
-    pub(crate) fn to_dense_public_inputs(&self) -> Vec<BlsScalar> {
+    pub fn to_dense_public_inputs(&self) -> Vec<BlsScalar> {
         let mut pi = vec![BlsScalar::zero(); self.n];
         self.public_inputs_sparse_store
             .iter()
